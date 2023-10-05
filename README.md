@@ -54,21 +54,22 @@ $${\color{green}\Large GOD \space WILLING, \space after \space that \space we \s
 $${\color{green}\Large good \space end \space right.}$$
 
 <br>
-📜file 1 Credits : https://shellgeek.com/get-aduser/ <br>
+📜file 1 Credits : <br>
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; https://shellgeek.com/get-aduser/ <br>
 https://community.spiceworks.com/topic/2001760-powershell-script-for-enabled-users-lastlogondate-30-days/ <br>
 https://activedirectorypro.com/last-logon-time/
-
-
+<br>
+<br>
 <dt> 📂File 2 : Exception-list.txt </dt>
 <dd>
-Put the important Users here, that shouldn't be moved by this script.
-(Those Users will be safe from this script)
+&ensp; &ensp; &ensp;Put the important Users here, that shouldn't be moved by this script.<br>
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; (Those Users will be safe from this script)
 </dd>
+
 
 <dt>📂File 3 : Extra/get OU Users count.ps1 </dt>
 <dd>
-"Not Related but, extra feature if you want to count the Users in Specific OU in your Active Directory"
+&ensp; &ensp; &ensp;"Not Related but, extra feature if you want to count the Users in Specific OU in your Active Directory"
 
-📜file 3 Credits : 
-https://stackoverflow.com/questions/32484212/get-a-count-of-users-in-a-specific-ou-and-its-sub-ous
+&ensp;📜file 3 Credits : https://stackoverflow.com/questions/32484212/get-a-count-of-users-in-a-specific-ou-and-its-sub-ous
 </dd>
