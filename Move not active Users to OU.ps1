@@ -1,9 +1,12 @@
 <# select Date to use in last login date #>
 $No_Of_Months = 6
 $d = (Get-Date).AddMonths(-$No_Of_Months)
+$srv_name = "server01"  <# your sever where you put ( log file, exception list ) on, write even the server name or it's Ip address #>
+$domin_pt1= "stc"	<# Here Enter part one of your Domain Name, if your domain name is stc.local ,then enter "stc" #>
+$domin_pt2= "local"	<# Here Enter part two of your Domain Name, if your domain name is stc.local ,then enter "local" #>
 
 <# Bring exception list file and put it variable #>
-$filePath = "\\dc01\Drivers\ERP\Scripts\Active Directory Related\1- Disable not active users\2- move Users that are not used lately\Exception-list-Users.txt"
+$filePath = "\\$srv_name\path\to\the\Exception-list.txt"
 [System.Collections.ArrayList]$exception_list = Get-Content $filePath
 <# Bring Not Used Users for "EX: last 6 months" #>
 [System.Collections.ArrayList]$Not_Used_Users= Get-ADUser -Filter '(LastLogonDate -lt $d)' -Properties LastLogonDate | ForEach-Object {$_.SamAccountName}
@@ -33,7 +36,7 @@ for($p=0 ; $p -lt $b ; $p++)
     $z=$Not_Used_Users[$p]
     $gg=$N2[$p]
     $i="DistinguishedName -like "
-    $v="CN=,OU=Not-Active-Users,DC=CAIROMETRO,DC=LOCAL"
+    $v="CN=,OU=Not-Active-Users,DC=$domin_pt1,DC=$domin_pt2"
     $v=$v.Replace(" ",",")
     $v=$v.Insert(3,$gg)
     $m=" -AND (SamAccountName -like "
@@ -88,7 +91,7 @@ for($pp=0 ; $pp -lt $bb ; $pp++)
     $zz=$Not_Used_Users[$pp]
     $ll = Get-ADUser -Filter '(SamAccountName -like $zz)' -Properties * | ForEach-Object {$_.Name}
     $ii="DistinguishedName -like "
-    $vv="CN=,OU=Mobiles,DC=CAIROMETRO,DC=LOCAL"
+    $vv="CN=,OU=Mobiles,DC=$domin_pt1,DC=$domin_pt2"
     $vv=$vv.Replace(" ",",")
     $vv=$vv.Insert(3,$ll)
     $mm=" -AND (SamAccountName -like "
@@ -117,15 +120,28 @@ write-host $Not_Used_Users + "`n"
 <# ------------------------------------------------------------------- #>
 <# Move the rest of users to and write document of old Users Data. #>
 
-$x=$Not_Used_Users.count
+$x=$Not_Used_Computers.count
+
+<# variable that have date and time in this format : 2023-09-16  05:21:47 PM #>
+$current_dateAndtime = [datetime]::now.tostring("yyyy-MM-dd  hh+mm+ss tt")
+$current_dateAndtime = $current_dateAndtime.Replace("+",":")
+$current_date = [datetime]::now.tostring("yyyy-MM-dd")
+
+if ($x -ne 0) {
+"Run At : " + $current_dateAndtime + "`n---------------------------------" >>  "\\$srv_name\path\to\log\file\Computers_not-used-for-$No_Of_Months-months-$current_date.txt"
+}
+
 for($k=0 ; $k -lt $x ; $k++)
 {
         $Not_Used_Users[$k] = $Not_Used_Users[$k].Replace(" ","")
 	$Not_Used_Users[$k] = $Not_Used_Users[$k].Replace("+","")
 	$j=$Not_Used_Users[$k]
+ 	$last_logon = Get-ADUser -Identity $j -Properties LastLogonDate | ForEach-Object {$_.LastLogonDate}
         $DistName = Get-ADUser -Identity $j -Properties DistinguishedName | ForEach-Object {$_.DistinguishedName}
-        $current_dateAndtime = [datetime]::now.tostring("yyyy-MM-dd  hh+mm+ss tt")
-        $cdAndt = ($current_dateAndtime).Replace("+",";")
-        "$j`n" + "$DistName `n">> "\\dc01\Drivers\ERP\Scripts\Active Directory Related\1- Disable not active users\2- move Users that are not used lately\Text files in which OU those users were\Old OU for Moved Users\Users_not-used-for-$No_Of_Months-months-$cdAndt.txt"
-        Move-ADObject -Identity "$DistName" -TargetPath "OU=Not-Active-Users,DC=CAIROMETRO,DC=LOCAL"
+        "UserName : $j `n" + "Last logon Date : $last_logon `n" + "old OU : $DistName `n" >> "\\$srv_name\path\to\log\file\Computers_not-used-for-$No_Of_Months-months-$current_date.txt"
+        Move-ADObject -Identity "$DistName" -TargetPath "OU=Not-Active-Users,DC=$domin_pt1,DC=$domin_pt1"
 }
+
+write-host "Users After Removing Users From 'Not-Active-Users' OU from the list:"
+write-host $Not_Used_Users.count, "Users `n-----------"
+write-host $Not_Used_Users , "`n"
