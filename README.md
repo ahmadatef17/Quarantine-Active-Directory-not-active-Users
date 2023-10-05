@@ -39,7 +39,7 @@
 
 3- Move users should be moved, to "Not-Active-Users" OU.
 
-4- At the end create log file that contains users moved to'Not-Active-Users' OU folloing Data :
+4- At the end it creates log file that contains users moved to'Not-Active-Users' OU folloing Data :
 > name,<br>
 > last log on date,<br>
 > old OU. 'before moving'
@@ -76,3 +76,4 @@ https://activedirectorypro.com/last-logon-time/
 
 &ensp;📜file 3 Credits : https://stackoverflow.com/questions/32484212/get-a-count-of-users-in-a-specific-ou-and-its-sub-ous
 </dd>
+</dl>
