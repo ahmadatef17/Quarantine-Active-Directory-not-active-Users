@@ -18,6 +18,15 @@
 >  and name it "Not-Active-Users", so the path will be for-example:
 >
 > "OU=Not-Active-Users,DC=my-Domain,DC=LOCAL" or "my-Domain.local/Not-Active-Users"
+
+> [!NOTE]<br>
+> You MUST edit the script by your values of those variables :<br>
+>
+> $No_Of_Months : &ensp; he limit you want "when was last time the user logged on the domain ?"<br>
+> &ensp; &ensp; &ensp; &ensp;The limit you want of months default 6 months<br>
+> $srv_name : &ensp; the server name or ip_address where you put the exception_list.txt file and where log file is created<br>
+> $domin_pt1 : &ensp; first part of your domain name if your Domain name is "stc.local" ,then it's "stc"<br>
+> $domin_pt2 : &ensp; second part of your domain name if your Domain name is "stc.local" ,then it's "local"<br>
  
 <H4>GOD Willing, This powershell script do the following : </H4>
 
