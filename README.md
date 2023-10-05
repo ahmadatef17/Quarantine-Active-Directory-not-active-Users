@@ -2,7 +2,7 @@
 <dl>
 
   <picture>
-  <img alt="Quarantine Not-Active-Users from Active Directory" src="https://i.imgur.com/aCGirE4.png">
+  <img alt="Quarantine Not-Active-Users from Active Directory" src="https://i.imgur.com/6spTAUY.png">
 </picture>
 
 <dt>📂File 1 : move not Active Computers to OU.ps1</dt>
