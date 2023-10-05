@@ -19,7 +19,7 @@
 >
 > "OU=Not-Active-Users,DC=my-Domain,DC=LOCAL" or "my-Domain.local/Not-Active-Users"
  
-<H4> This powershell script do the following : </H4>
+<H4>GOD Willing, This powershell script do the following : </H4>
 
 1- Select all Users that their "last login date" exceed for example 6 months <br>
 &ensp; &ensp;"You can modify the number : 3 months or whatever you want",<br>
@@ -37,10 +37,13 @@
 > &ensp; &ensp; &ensp;You can ignore this part by commenting it by putting before it "<#", Putting after it "#>" <br>
 > &ensp; &ensp; &ensp;or you can edit this part to exclude important OU's, That you Don't want the Script to touch Users inside of it.
 
-3- At the end create log file that contains users moved to'Not-Active-Users' OU folloing Data :
+3- Move users should be moved, to "Not-Active-Users" OU.
+
+4- At the end create log file that contains users moved to'Not-Active-Users' OU folloing Data :
 > name,<br>
 > last log on date,<br>
 > old OU. 'before moving'
+
 
 <H4> After Running this Script </H4>
 
