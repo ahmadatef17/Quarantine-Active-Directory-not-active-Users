@@ -47,7 +47,7 @@
 
 <H4> After Running this Script </H4>
 
-You will disable all the users in , if no complain occured in let's say 1 month,
+You will disable all the users in "Not-Active-Users" OU , if no complain occured in let's say 1 month,
 then delete those Users.
 </dd>
 <br>
