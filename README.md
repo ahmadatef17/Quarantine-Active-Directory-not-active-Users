@@ -28,7 +28,7 @@
 2- During this operation the script :
 > 2.1- The script go to file named 'exception-list.txt' <br>
 > &ensp; &ensp; &ensp;that include ( important users ) SAMAccountName "the username used in login to domain computers", <br>
-> &ensp; &ensp; &ensp;That I don't want to be >touched or moved "except those users while running this script".
+> &ensp; &ensp; &ensp;That I don't want to be touched or moved "except those users while running this script".
 
 > 2.2- The script will ignore all the Users inside "Not-Active-Users" OU <br>
 > &ensp; &ensp; &ensp;when counting the Users that Need to be Moved.
