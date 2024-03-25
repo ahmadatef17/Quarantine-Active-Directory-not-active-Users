@@ -22,7 +22,7 @@
 > [!NOTE]<br>
 > You MUST edit the script with your values of those variables :<br>
 >
-> $No_Of_Months : &ensp; he limit you want "when was last time the user logged on the domain ?"<br>
+> $No_Of_Months : &ensp; the limit you want "when was last time the user logged on the domain ?"<br>
 > &ensp; &ensp; &ensp; &ensp;The limit you want of months default 6 months<br>
 > $srv_name : &ensp; the server name or ip_address where you put the exception_list.txt file and where log file is created<br>
 > $domin_pt1 : &ensp; first part of your domain name if your Domain name is "stc.local" ,then it's "stc"<br>
