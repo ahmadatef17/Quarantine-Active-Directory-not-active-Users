@@ -31,7 +31,7 @@
 <H4>GOD Willing, This powershell script do the following : </H4>
 
 1- Select all Users that their "last login date" exceed for example 6 months <br>
-&ensp; &ensp;"You can modify the number : 3 months or whatever you want",<br>
+&ensp; &ensp;"You can modify the number",<br>
 &ensp; &ensp;Then move them to new Organization Unit (OU) named 'Not-Active-Users'
 
 2- During this operation the script :
