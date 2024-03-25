@@ -61,7 +61,7 @@ then delete those Users.
 </dd>
 <br>
 
-$${\color{green}\Large GOD \space WILLING, \space after \space that \space we \space will \space have \space active \space directory \space clear \space of,}$$
+$${\color{green}\Large GOD \space WILLING, \space after \space that \space we \space will \space have \space active \space directory \space clear \space of}$$
 
 $${\color{green}\Large not \space active \space users, good \space end \space right.}$$
 
