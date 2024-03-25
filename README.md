@@ -20,7 +20,7 @@
 > "OU=Not-Active-Users,DC=my-Domain,DC=LOCAL" or "my-Domain.local/Not-Active-Users"
 
 > [!NOTE]<br>
-> You MUST edit the script by your values of those variables :<br>
+> You MUST edit the script with your values of those variables :<br>
 >
 > $No_Of_Months : &ensp; he limit you want "when was last time the user logged on the domain ?"<br>
 > &ensp; &ensp; &ensp; &ensp;The limit you want of months default 6 months<br>
