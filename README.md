@@ -13,7 +13,7 @@
 
 <H4> Before Running this Script </H4>
 
-> Don't forget to create Organization Unit 'OU' in Active Directory Directly after in Domain-name container,
+> Don't forget to create Organization Unit 'OU' in Active Directory in Domain-name container,
 >
 >  and name it "Not-Active-Users", so the path will be for-example:
 >
