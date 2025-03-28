@@ -63,7 +63,7 @@ then delete those Users.
 
 $${\color{green}\Large GOD \space WILLING, \space after \space that \space we \space will \space have \space active \space directory}$$
 
-$${\color{green}\Large clear \space of \space not \space active \space users.}$$
+$${\color{green}\Large Clear \space of \space not \space active \space users.}$$
 
 <br>
 📜file 1 Credits : <br>
